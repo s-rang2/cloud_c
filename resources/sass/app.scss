@@ -1,0 +1,176 @@
+//
+
+//common
+body {
+    
+    width:100%;
+  text-align: center;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+ 
+}
+//header
+.header{
+   /*position:fixed;*/
+   position:relative;
+    top:0;
+    width:100%;
+    color:blue;
+   height:102px;
+   background: white;
+        
+}
+.header .hmenu{
+margin: 0 auto;
+   width:980px;
+   height:25px;
+}
+.header .hmenu ul{
+   float:right;
+/*display: inline-block;*/
+vertical-align:top;
+}
+.header .hmenu ul li{
+display:inline;
+font-size:10px;
+color:#999999;
+padding:0 10px;
+}
+.header .section{
+width:980px;
+height:74px;
+}
+.header .section img{
+float:left;
+padding-top:1%;
+
+}
+.smenu{
+  display:inline-block;
+  height:75px;
+  width:69%;
+
+}
+
+.m1, .m2, .m3{
+  display:inline;
+
+}
+.m1 a, .m2 a, .m3 a{
+  line-height:2;
+  margin-right:14%;
+  padding-right:52px;
+  border-right:1px solid grey;
+  color:black;
+}
+
+//footer
+.footer{
+
+position:relative;
+bottom:0;
+width:100%;
+height:149px;
+background-color: #003d75;
+}
+.footer .section{
+width:980px;
+min-width:980px;
+margin: 0 auto;
+height:130px;
+
+}
+.q1{
+float:left;
+width:22%;
+
+}
+.q1 img{
+margin-top:8%;
+
+}
+.q2{
+float:center;
+color:#5f89b1;
+font-size:12px;
+width:100%;
+margin-top:3%;
+padding:4px 8px;
+
+}
+.q3{
+float:right;
+
+}
+.writer{
+float:left;
+font-size:12px;
+margin-top:1%;
+margin-left:15px;
+margin-right:5%;
+font-size:11px;
+color:#5f89b1;
+}
+#site{
+padding-left:5%;
+}
+.hits{
+margin-top:1%;
+font-size:13px;
+color:#5f89b1;
+
+}
+select{
+color: #b5cee6;
+border: 0;
+background:#05325b;
+height:22px;
+}
+
+//body
+.backg{
+  background:url(https://t1.daumcdn.net/cfile/tistory/23267B3454B5DA7B03) 50%  ;
+}
+.hcontent{
+    width:980px;
+    margin: 0 auto;
+
+}
+.content{
+  /* background-color: rgba( 255, 255, 255, 0.5 ); */
+  /* background-color:white; */
+width:980px;
+margin: 0 auto;
+  background-color: rgba( 255, 255, 255, 0.9 );
+
+
+}
+      #hello {
+        padding: 30px;
+        font-size: 50px;
+        font-weight: bold;
+        text-align: center;
+        background-color: #ffffff;
+        color:black;
+        background-color: rgba( 255, 255, 255, 0.5 );
+      }
+      .ple1{
+      float:left;
+      padding:10px;
+       width:50%;
+       height:230px;
+       
+        
+      }
+      .ple1 img{
+        text-align:center;
+      }
+      .ple1 span{
+        color:blue;
+      }
+      .row1:after{
+      content:"";
+      display:table;
+      clear:both;
+      }
+
