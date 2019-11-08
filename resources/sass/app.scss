@@ -1,6 +1,8 @@
 //
 
 //common
+*{
+}
 body {
     
     width:100%;
@@ -11,18 +13,14 @@ body {
 }
 //header
 .header{
-   /*position:fixed;*/
-   position:relative;
     top:0;
-    width:100%;
-    color:blue;
+    width: 980px;
+    margin: 0 auto;
    height:102px;
    background: white;
         
 }
 .header .hmenu{
-margin: 0 auto;
-   width:980px;
    height:25px;
 }
 .header .hmenu ul{
@@ -37,18 +35,21 @@ color:#999999;
 padding:0 10px;
 }
 .header .section{
-width:980px;
 height:74px;
+margin: 0 auto;
+display: inline-block;
+width:100%;
 }
 .header .section img{
 float:left;
-padding-top:1%;
-
+display:inline;
 }
 .smenu{
-  display:inline-block;
-  height:75px;
-  width:69%;
+  display:inline;
+  float:right;
+  width:74%;
+
+
 
 }
 
@@ -57,12 +58,16 @@ padding-top:1%;
 
 }
 .m1 a, .m2 a, .m3 a{
-  line-height:2;
+  line-height:3;
   margin-right:14%;
   padding-right:52px;
   border-right:1px solid grey;
   color:black;
+  font-weight:600;
 }
+//header-end
+
+
 
 //footer
 .footer{

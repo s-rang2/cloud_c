@@ -1,70 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Page Title</title>
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css"> 
+@extends('/project/main')
+@section('content')
 <style>
- {
-outline: 1px solid red;
-}
-/* header */
-
-.header{
-   /*position:fixed;*/
-   position:relative;
-    top:0;
-    width:100%;
-    color:blue;
-   height:102px;
-   background: white;
-        
-}
-.header .hmenu{
-margin: 0 auto;
-   width:980px;
-   height:25px;
-}
-.header .hmenu ul{
-   float:right;
-/*display: inline-block;*/
-vertical-align:top;
-}
-.header .hmenu ul li{
-display:inline;
-font-size:10px;
-color:#999999;
-padding:0 10px;
-}
-.header .section{
-width:980px;
-height:74px;
-}
-.header .section img{
-float:left;
-margin-top:1%;
-}
-.smenu{
-  display:inline-block;
-  height:75px;
-  width:69%;
-
-}
-
-.m1, .m2, .m3{
-  display:inline;
-
-}
-.m1 a, .m2 a, .m3 a{
-  line-height:2;
-  margin-right:14%;
-  padding-right:52px;
-  border-right:1px solid grey;
-  color:black;
-
-}
 
 
 /* body */
@@ -73,14 +9,6 @@ margin-top:1%;
 
 }
 
-body {
-    
-    width:100%;
-  text-align: center;
-  color: white;
-  font-family: Arial, Helvetica, sans-serif;
- 
-}
 .hcontent{
     width:980px;
     margin: 0 auto;
@@ -95,15 +23,7 @@ margin: 0 auto;
 
 
 }
-      #hello {
-        padding: 30px;
-        font-size: 50px;
-        font-weight: bold;
-        text-align: center;
-        background-color: #ffffff;
-        color:black;
-        background-color: rgba( 255, 255, 255, 0.5 );
-      }
+
       .ple1{
       float:left;
       padding:10px;
@@ -144,102 +64,13 @@ margin: 0 auto;
       td{
           float:center;
       }
-  /* footer */
-      .footer{
 
-position:relative;
-bottom:0;
-width:100%;
-height:149px;
-background-color: #003d75;
-}
-.section{
-width:980px;
-min-width:980px;
-margin: 0 auto;
-height:130px;
-
-}
-.q1{
-float:left;
-width:22%;
-
-}
-.q1 img{
-margin-top:8%;
-
-}
-.q2{
-float:center;
-color:#5f89b1;
-font-size:12px;
-width:100%;
-margin-top:3%;
-padding:4px 8px;
-
-}
-.q3{
-float:right;
-
-}
-.writer{
-float:left;
-font-size:12px;
-margin-top:1%;
-margin-left:15px;
-margin-right:5%;
-font-size:11px;
-color:#5f89b1;
-}
-#site{
-padding-left:5%;
-}
-.hits{
-margin-top:1%;
-font-size:13px;
-color:#5f89b1;
-
-}
-
-select{
-color: #b5cee6;
-border: 0;
-background:#05325b;
-height:22px;
-}
       
 </style>
 
-</head>
-<body>
+<script src="https://cdn.ckeditor.com/ckeditor5/15.0.0/classic/ckeditor.js"></script>
 
 
-<div class="header">
-   <div class="hmenu">
-       <ul><li>LOGIN</li><li>WEBMAIL</li><li>SEARCH</li><li>SITEMAP</li><li>ENGLICH</li><li>CHINESE</li>
-        <li><img src="http://www.kpu.ac.kr/front/images/blog.png"></li>
-        <li><img src="http://www.kpu.ac.kr/front/images/icon_social_instagram.png"></li>
-        <li><img src="http://www.kpu.ac.kr/front/images/icon_social_facebook.png">
-        </ul>
-    </div>
-    
-   <div class="section">
-    <a href="{{url('intro')}}"><img src="http://www.kpu.ac.kr/front/images/header_logo.png"></a>
-      <div class="smenu">
-          <ul>
-            <li class="m1">
-              <a href="{{url('/intro')}}">홈으로</a> 
-            </li>
-            <li class="m2">
-                <a href="{{url('/intro-wook')}}">조성욱</a> 
-            </li>
-            <li class="m3">
-                <a href="{{url('/intro-sungmin')}}">정성민
-            </li></a> 
-          </ul>
-      </div>
-    </div>
-</div>
 <!--body-->
 <div class="backg">
   <div class="content">
@@ -284,7 +115,8 @@ height:22px;
         <ul>
             <li><a href="#tabs-1">유튜브</a></li>
             <li><a href="#tabs-2">사진첩</a></li>
-            <li><a href="#tabs-3">풍경</a></li>
+            <li><a href="#tabs-3">방명록</a></li>
+
         </ul>
         <div id="tabs-1">
             <!-- <p><iframe width="100%" src="https://www.youtube.com/watch?v=ib-o3OZfqy4&feature=youtu.be"></iframe></p> -->
@@ -294,64 +126,22 @@ height:22px;
             <p><img src="https://s3.amazonaws.com/castle.kpu/project_img/pic_wook.jpg" alt="" width="100%;"></p>
         </div>
         <div id="tabs-3">
-                <p><img src="https://s3.amazonaws.com/castle.kpu/project_img/lan_wook.jpg" width="100%;" alt=""></p>
+          <form action="" method="post">
+          <textarea name="content" id="editor" cols="230" rows="520"></textarea>
+          <input type="submit" value="전송">
+          </form>
         </div>
-</div>
+      </div>
+
     </div>
   </div>
 </div>
+          <script>
+        ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+          </script>
 
-<!--body-end-->
-
-
-<div class="footer">
-   <div class="section">
-    
-   <div class="q1">
-   <img src="http://www.kpu.ac.kr/front/images/footer_logo.png">    
-    </div>
-    
-   <div class="q2">
-    
-           <span>개인정보처리방침 |</span>
-            <span>개인정보목적외이용제공대장 |</span>
-            <span>정보보호실천수칙 |</span>
-            <span>정보공개 |</span>
-            <span>대학정보공시 |</span>
-            <span>원격지원 |</span>
-            <span id="site">
-                      <select>
-           <option selected>관련사이트바로가기</option>
-            <option>잉?</option>
-                    </select>
-            </span>
-           
-    </div>
-    
-    <div class="q3">
-    
-
-       
-    </div>
-    <div class="writer">
-    15073 경기도 시흥시 산기대학로 237 (정왕동) 한국산업기술대학교 대표전화 031-8041-1000 입학안내 1588-2036<br/>
-    COPYRIGHT 2014 KOREA POLYTECHNIC UNIVERSITY. ALL RIGHTS RESERVED. webmaster2@kpu.ac.kr
-    
-    </div>
-       <div class="hits">Today : <span style="color:#b5cee6">1</span> <br/>
-                       Total : <span style="color:#b5cee6">39,482,776</span></div>
-    </div>
-  </div>
-
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-  $( function() {
-    $( "#tabs" ).tabs();
-  } );
-  </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-</body>
-</html>
+@endsection
