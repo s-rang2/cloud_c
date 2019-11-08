@@ -2,7 +2,7 @@
 
 ## Cloud Computing
 
-Project - Make Homepage
+<h3>Project - Make Homepage</h3>
 
 - 2015150036 조성욱
 - 2016150049 정성민
