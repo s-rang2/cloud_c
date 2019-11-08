@@ -14,3 +14,11 @@
 Route::get('/', function () {
     return view('/project/intro');
 });
+
+Route::get('/intro-wook', function () {
+    return view('/project/wook');
+});
+
+Route::get('/intro-sungmin', function () {
+    return view('/project/min');
+});
