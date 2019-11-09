@@ -126,7 +126,8 @@ margin: 0 auto;
             <p><img src="https://s3.amazonaws.com/castle.kpu/project_img/pic_wook.jpg" alt="" width="100%;"></p>
         </div>
         <div id="tabs-3">
-          <form action="" method="post">
+          <form action="{{route('cloud.store')}}" method="post" enctype="multipart/form-data" >
+            @csrf
           <textarea name="content" id="editor" cols="230" rows="520"></textarea>
           <input type="submit" value="전송">
           </form>
