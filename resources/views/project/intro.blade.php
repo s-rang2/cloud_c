@@ -1,4 +1,5 @@
 @extends('/project/main')
+<title>13 Team.</title>
 @section('content')
 <style>
  

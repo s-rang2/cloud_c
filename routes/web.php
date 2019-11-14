@@ -25,4 +25,7 @@ Route::get('/intro-sungmin', function () {
     return view('/project/min');
 });
 Route::post('/cloudStore1','CloudController@store1')->name('store1');
+Route::post('/cloudStore2','CloudController@store2')->name('store2');
 Route::delete('/CloudController/{id}','CloudController@delete1')->name('delete1');
+Route::delete('/CloudController/{id}','CloudController@delete2')->name('delete2');
+

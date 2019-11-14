@@ -1,4 +1,6 @@
 @extends('/project/main')
+<title>조성욱</title>
+
 @section('content')
 <style>
 
@@ -66,18 +68,52 @@ margin: 0 auto;
       .pagination{
           justify-content:center;
       }
-      .btn1{
-        background-color: Transparent;
+      .area{
+          width:77%;
+          display:inline-block;
+
+      }
+      .btn0{
+        background-color: #4CAF50; /* Green */
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        -webkit-transition-duration: 0.4s; /* Safari */
+        transition-duration: 0.4s;
+        cursor: pointer;
+        
+      }
+
+      .btn1 {
+          float:right;
+            background-color: white;
+            color: black;
+            border: 2px solid #e7e7e7;
+    }
+.btn1:hover {background-color: #e7e7e7;}
+
+      .btn2{
+    background-color: Transparent;
     background-repeat:no-repeat;
     border: none;
     cursor:pointer;
     overflow: hidden;
     outline:none;
       }
-
+      .d2{
+          font-size:13px;
+      }
+      .d1{
+          font-size:16px;
+          font-weight:bold;
+      }
       
 </style>
-
 <script src="https://cdn.ckeditor.com/ckeditor5/15.0.0/classic/ckeditor.js"></script>
 
 
@@ -152,28 +188,34 @@ margin: 0 auto;
                     </th>
                 </tr>
             </table>
-          <textarea name="content" id="editor" cols="230" rows="520"></textarea>
-          <input type="submit" value="전송">
+            <div class="area">
+          <textarea name="content"  id="editor" cols="230" rows="520"></textarea>
+          </div>
+          <script>
+            $(function (){
+                config.width='75%';
+                CKEDITOR.config.width=200;
+            });
+          </script>
+          <button class="btn0 btn1">댓글남기기</button>
           </form>
             <table width="100%">
                 @foreach($clouds as $cloud)
-                <tr style="border-top:1px solid #a000a0;border-bottom:1px solid #ccc;">
-                <td width="3%">No.{{$cloud->id}}</td>
-                    <td>{{$cloud->name}}</td>       
-                    <td>{{ date("Y년 m월 d일", strtotime($cloud->created_at)) }}</td>
-                    <td>수정</td>
+                <tr style="border-top:1px solid #ccc;">
+                <td width="15%" class="d2">{{$cloud->id}}</td>
+                    <td class="d1">{{$cloud->name}}</td>       
+                    <td class="d2" style="color:#999999;">{{ date("Y년 m월 d일", strtotime($cloud->created_at)) }}</td>
                     <td>
-                    <form action="{{route('delete1',$cloud->id)}}" method="post">
-                    @csrf
-                    @method('delete')
-
-                    <button type="submit" class="btn1" >전송</button>
-                    </form>
+                        <form action="{{route('delete1',$cloud->id)}}" method="post">
+                        @csrf
+                        @method('delete')
+                        <button type="submit" class="btn2" >삭제</button>
+                        </form>
                     </td>
 
                 </tr>
                 <tr>
-                    <td colspan=5>{!!$cloud->content!!}</td>
+                    <td colspan=5 style="padding:3%;">{!!$cloud->content!!}</td>
                 </tr>
                 @endforeach
             </table>
