@@ -15,10 +15,10 @@
               <a href="{{url('/')}}">홈으로</a> 
             </li>
             <li class="m2">
-                <a href="{{url('/intro-wook')}}">조성욱</a> 
+                <a href="{{route('url',$id=1)}}">조성욱</a> 
             </li>
             <li class="m3">
-                <a href="{{url('/intro-sungmin')}}">정성민
+                <a href="{{route('url',$id=2)}}">정성민
             </li></a> 
           </ul>
       </div>

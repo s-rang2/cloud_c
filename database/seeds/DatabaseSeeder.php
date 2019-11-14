@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
         // $this->call(CloudTableSeeder::class);
         factory('App\Cloud',10)->create();
+        factory('App\Cloud2',10)->create();
 
     }
 }

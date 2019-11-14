@@ -51,18 +51,28 @@ margin: 0 auto;
           color:black;
           display:flex;
       }
-      tr{
+      .table1 tr{
           border-top:1px solid #ccc;
       }
-      th,td{
-          
+      .table1 th,td{
           padding:5px;
       }
-      th{
+      .table1 th{
           margin-right:20px;
       }
-      td{
+      .table1 td{
           float:center;
+      }
+      .pagination{
+          justify-content:center;
+      }
+      .btn1{
+        background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
       }
 
       
@@ -88,6 +98,7 @@ margin: 0 auto;
     </div>
 
     <div class="row2">
+      <div class="table1">
         <table>
         <tr style="border-top:1px solid #a000a0;border-width: 3px;">
                 <th>이름</th>
@@ -110,27 +121,69 @@ margin: 0 auto;
                 <td>사진</td>
             </tr>
         </table>
+        </div>
 
         <div id="tabs" style="width:75%;" >
         <ul>
-            <li><a href="#tabs-1">유튜브</a></li>
+            <li><a href="#tabs-1">방명록</a></li>
             <li><a href="#tabs-2">사진첩</a></li>
-            <li><a href="#tabs-3">방명록</a></li>
+            <li><a href="#tabs-3">유튜브</a></li>
 
         </ul>
-        <div id="tabs-1">
-            <!-- <p><iframe width="100%" src="https://www.youtube.com/watch?v=ib-o3OZfqy4&feature=youtu.be"></iframe></p> -->
-                <p><iframe width="560" height="315" src="https://www.youtube.com/embed/ib-o3OZfqy4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
-        </div>
+
         <div id="tabs-2">
             <p><img src="https://s3.amazonaws.com/castle.kpu/project_img/pic_wook.jpg" alt="" width="100%;"></p>
         </div>
-        <div id="tabs-3">
-          <form action="{{route('cloud.store')}}" method="post" enctype="multipart/form-data" >
+        <div id="tabs-1">
+            <div class="table2">
+          <form action="{{route('store1')}}" method="post" enctype="multipart/form-data" >
             @csrf
+            <table>
+                <tr>
+                    <th>이름
+                        <td>
+                            <input type="text" name="name">
+                        </td>
+                    </th>
+                    <th>비번
+                        <td>
+                            <input type="password" name="pwd">
+                        </td>
+                    </th>
+                </tr>
+            </table>
           <textarea name="content" id="editor" cols="230" rows="520"></textarea>
           <input type="submit" value="전송">
           </form>
+            <table width="100%">
+                @foreach($clouds as $cloud)
+                <tr style="border-top:1px solid #a000a0;border-bottom:1px solid #ccc;">
+                <td width="3%">No.{{$cloud->id}}</td>
+                    <td>{{$cloud->name}}</td>       
+                    <td>{{ date("Y년 m월 d일", strtotime($cloud->created_at)) }}</td>
+                    <td>수정</td>
+                    <td>
+                    <form action="{{route('delete1',$cloud->id)}}" method="post">
+                    @csrf
+                    @method('delete')
+
+                    <button type="submit" class="btn1" >전송</button>
+                    </form>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td colspan=5>{!!$cloud->content!!}</td>
+                </tr>
+                @endforeach
+            </table>
+            </div>
+            
+            {{$clouds->links()}}
+        </div>
+        <div id="tabs-3">
+            <!-- <p><iframe width="100%" src="https://www.youtube.com/watch?v=ib-o3OZfqy4&feature=youtu.be"></iframe></p> -->
+                <p><iframe width="560" height="315" src="https://www.youtube.com/embed/ib-o3OZfqy4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
         </div>
       </div>
 
@@ -143,6 +196,7 @@ margin: 0 auto;
         .catch( error => {
             console.error( error );
         } );
+
           </script>
 
 @endsection

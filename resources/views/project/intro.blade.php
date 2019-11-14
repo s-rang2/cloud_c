@@ -3,7 +3,8 @@
 <style>
  
 .backg{
-  background:url(https://t1.daumcdn.net/cfile/tistory/23267B3454B5DA7B03) 50%  ;
+  /* background:url(https://t1.daumcdn.net/cfile/tistory/23267B3454B5DA7B03) 50%  ; */
+  background:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIcYoP6kArBMc3KJTmhgebM_dpt75ithpL0rkuh3QZnixl1IRLaw&s) 50%  ;
 }
 .hcontent{
     width:980px;
@@ -31,11 +32,9 @@ margin: 0 auto;
       float:left;
        width:50%;
        height:230px;
-       
+       text-align:center;
+       padding-top:2%;
         
-      }
-      .ple1 img{
-        text-align:center;
       }
       .ple1 span{
         color:blue;
@@ -56,15 +55,14 @@ margin: 0 auto;
       <p id="hello">Self Introduction of 13 Team.</p>
   <div class="content">
 
-    <p>13팀의 자기소개.</p>
     <div class="row1">
         <div class="ple1">
-        <a href="{{url('/intro-wook')}}">
+        <a href="{{route('url',$id=1)}}">
           <img src="https://s3.amazonaws.com/castle.kpu/project_img/pro_wook.jpg" alt="Avatar" style="width:200px; ">
         </a>
         </div>
         <div class="ple1">
-        <a href="{{url('/intro-sungmin')}}">
+        <a href="{{route('url',$id=2)}}">
           <img src="https://s3.amazonaws.com/castle.kpu/project_img/pro_sung.jpg" alt="Avatar" style="width:172px; ">
         </a>
         </div>

@@ -75,9 +75,9 @@ margin: 0 auto;
  
       
 </style>
+<script src="https://cdn.ckeditor.com/ckeditor5/15.0.0/classic/ckeditor.js"></script>
 
-</head>
-<body>
+
 
 
 <!--body-->
@@ -133,7 +133,21 @@ margin: 0 auto;
             <p><img src="https://s3.amazonaws.com/castle.kpu/project_img/fish.jpg" alt=""></p>
         </div>
         <div id="tabs-3">
-            <p><img src="https://s3.amazonaws.com/castle.kpu/project_img/lan_sung.jpg" width="100%" alt=""></p>
+            <table>
+                @foreach($cloud2s as $cloud)
+                <tr>
+                <th>No.{{$cloud->id}}</th>
+                    <th>{{$cloud->title}}</th>
+                    <th>{{$cloud->content}}</th>
+                </tr>
+                @endforeach
+            </table>
+        
+          <form action="" method="post" enctype="multipart/form-data" >
+            @csrf
+          <textarea name="content" id="editor" cols="230" rows="520"></textarea>
+          <input type="submit" value="전송">
+          </form>
         </div>
 </div>
     </div>
@@ -141,6 +155,12 @@ margin: 0 auto;
 </div>
 
 <!--body-end-->
-
+<script>
+        ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+          </script>
 
 @endsection

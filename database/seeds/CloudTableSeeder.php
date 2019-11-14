@@ -13,9 +13,6 @@ class CloudTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('cloud')->insert([
-            'id'=>'1',
-            'name'=>''
-        ])
+
     }
 }
